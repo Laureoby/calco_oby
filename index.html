@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--Bootstrap css-->
+     <link rel="stylesheet" href="bootstrap\bootstrap-4.6.1-dist\css\bootstrap.min.css">
+     <!--css-->
+     <link rel="stylesheet" href="style.css">
+    <title>Calculatrice oby</title>
+</head>
+<body>
+    <div class="container mt-5" id="container">
+        <div class="row">
+            <div id="ecran" class="mt-4 mx-auto"></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col lg-4 md-4">
+                <button onClick="ecran.innerHTML+='7'">7</button>
+                <button onClick="ecran.innerHTML+='4'">4</button>
+                <button onClick="ecran.innerHTML+='1'">1</button>
+                <button onClick="ecran.innerHTML=''">C</button>
+            </div>
+            <div class="col lg-4 md-4">
+                <button onClick="ecran.innerHTML+='8'">8</button>
+                <button onClick="ecran.innerHTML+='5'">5</button>
+                <button onClick="ecran.innerHTML+='2'">2</button>
+                <button onClick="ecran.innerHTML+='0'">0</button>
+            </div>
+            <div class="col lg-4 md-4">
+                <button onClick="ecran.innerHTML+='9'">9</button>
+                <button onClick="ecran.innerHTML+='6'">6</button>
+                <button onClick="ecran.innerHTML+='3'">3</button>
+                <button onClick="res() ">=</button>
+            </div>
+            <div class="col lg-4 md-4">
+                <button onClick="ecran.innerHTML+='/'">/</button>
+                <button onClick="ecran.innerHTML+='*'">*</button>
+                <button onClick="ecran.innerHTML+='-'">-</button>
+                <button onClick="ecran.innerHTML+='+'">+</button>
+            </div>
+        </div>
+    </div>
+     <!-- Partie javascript-->
+    <script>
+        var ecran = document.getElementById("ecran");
+        function res(){
+            let x = ecran.textContent;
+            ecran.innerHTML = eval(x);         
+        }
+    </script>
+     <!-- jQuery first, then Popper.js, then Bootstrap JS-->
+     <script src="bootstrap\bootstrap-4.6.1-dist\js\jquery.js"></script>
+     <script src="bootstrap\bootstrap-4.6.1-dist\js\popper.js"></script>
+     <script src="bootstrap\bootstrap-4.6.1-dist\js\bootstrap.min.js"></script>
+</body>
+</html>
